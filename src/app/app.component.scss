@@ -1,0 +1,55 @@
+.encabezado {
+    margin-top: -27px;
+    background-color: rgb(5, 196, 138);
+    margin-left: -8px;
+    margin-right: -8px;
+    }
+    .letrasencabezado{
+      display: flex;
+      position: relative;
+      top: 3px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 250%;
+      justify-content: center;
+    }
+    .enlaces{
+      display: flex;
+      position: relative;
+      right: -20%;
+      top: -5px;
+      font-family: 'Times New Roman', Times, serif;
+      padding-left: 20px;
+      justify-content: center;
+      left: -50%;
+      padding: 10px;
+    }
+    .pie{
+      margin-top: 265px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -8px;
+      margin-left: -8px;
+      background-color: rgb(5, 196, 138);
+      padding: 20px;
+      text-align: center;
+    }
+    .ladoderecho{ 
+      max-width: 17%;
+      position: absolute;
+      float: right;
+      background-color: aqua;
+      margin-top: -33px;
+      padding:24px;
+      right: -8px;
+    }
+    .ladoizquierdo{
+      position: absolute;
+      max-width: 17%;
+      float: left;
+      background-color: aqua;
+      margin-top: -33px;
+      padding:21px;
+      left: -8px;
+      
+    }
+    
