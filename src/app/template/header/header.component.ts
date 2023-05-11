@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(private router: Router ){
+
+  }
+  listar(){
+    this.router.navigate(['paginas/listacontactos'])
+  }
+  nuevo(){
+    this.router.navigate(['paginas/nuevo-contacto'])
+  }
 }

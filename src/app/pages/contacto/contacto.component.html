@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="contacto.component.scss" />
+    <label for="txtcedula">Cedula</label>
+    <input id="txtcedula" [(ngModel)]="contacto.cedula"/>    
+    <label for="txtnombre">Nombre</label>
+    <input id="txtnombre" [(ngModel)]="contacto.nombre"/>
+    <label for="txtapellido">Apellido</label>
+    <input id="txtapellido" [(ngModel)]="contacto.apellido" />
+    <label for="txtcorrero">Correo</label>
+    <input id="txtcorreo" [(ngModel)]="contacto.correo"/>
+    <label for="txtcelular">Celular</label>
+    <input id="txtcelular" [(ngModel)]="contacto.celular"/>
+    <label for="txtdireccion">Direccion</label>
+    <input id="txtdireccion" [(ngModel)]="contacto.direccion"/>
+    <button (click)="guardar()">Guardar</button>
+

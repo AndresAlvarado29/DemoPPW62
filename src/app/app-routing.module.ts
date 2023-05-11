@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaContactosComponent } from './pages/lista-contactos/lista-contactos.component';
-import { HeaderComponent } from './template/header/header.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
-  {path:"paginas/ListaContactos", component: ListaContactosComponent},
-  {path:"template/header", component: HeaderComponent}
+  {path:"paginas/listacontactos", component: ListaContactosComponent},
+  {path:"paginas/nuevo-contacto", component: ContactoComponent}
 ];
 
 @NgModule({

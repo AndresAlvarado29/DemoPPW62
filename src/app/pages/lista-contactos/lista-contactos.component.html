@@ -1,14 +1,13 @@
-<link rel="stylesheet" href="lista-contactos.component.scss" />
-<form>
-    <label for="nombre">Nombre</label>
-    <input id="nombre" />
-    <label for="apellido">Apellido</label>
-    <input id="apellido" />
-    <label for="correro">Correo</label>
-    <input id="correo" />
-    <label for="celular">Celular</label>
-    <input id="celular" />
-    <label for="direccion">Direccion</label>
-    <input id="direccion" />
-    <button>Enviar</button>
-    </form>
+<p>lista-contactos works!</p>
+
+<span *ngIf="listadoContactos.length == 0">
+    No existen contactos
+</span>
+
+<ul>
+    <li *ngFor="let contacto of listadoContactos">
+        <a (click)="editar(contacto)">{{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
+        <a href="" (click)="eliminar(contacto)">Eliminar</a>
+    </li>
+    
+</ul>
