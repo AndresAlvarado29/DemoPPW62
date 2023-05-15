@@ -1,4 +1,4 @@
-<p>lista-contactos works!</p>
+<p>Lista de Contactos</p>
 
 <span *ngIf="listadoContactos.length == 0">
     No existen contactos
@@ -6,8 +6,13 @@
 
 <ul>
     <li *ngFor="let contacto of listadoContactos">
-        <a (click)="editar(contacto)">{{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
-        <a href="" (click)="eliminar(contacto)">Eliminar</a>
+        <p>
+            Cedula: {{contacto.cedula}} | Nombre: {{contacto.nombre}} | Apellido: {{contacto.apellido}}| Correo: {{contacto.correo}}| Celular: {{contacto.celular}}| Direccion: {{contacto.direccion}}
+        </p>
+        <ul>
+        <button (click)="editar(contacto)">Editar</button>
+        <button (click)="eliminar(contacto)">Eliminar</button>
+    </ul>
     </li>
     
 </ul>

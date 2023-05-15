@@ -23,12 +23,11 @@ constructor(private contactoService: ContactoService,
   let params: NavigationExtras = {
     queryParams: {
       contacto: contacto,
-      nombre: 'Andres'
     }
   }
   this.router.navigate(['paginas/nuevo-contacto'],params)
  }
  eliminar(contacto: Contacto){
-
+this.contactoService.delete(contacto)
  }
 }
