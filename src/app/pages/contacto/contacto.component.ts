@@ -26,10 +26,17 @@ export class ContactoComponent {
 this.contactoService.getList().forEach(element => {
   if(element.cedula===this.contacto.cedula){
     this.contactoService.update(this.contacto)
+    this.contactoService.delete(this.contacto)
   }
 });
  this.contactoService.save(this.contacto)
   this.contacto= new Contacto()
+
+  this.contactoService.getList().forEach(element => {
+    if(element.cedula===this.contacto.cedula){
+      this.contactoService.delete(this.contacto)
+    }
+  });  
   this.router.navigate(['paginas/listacontactos'])
  }
 }
