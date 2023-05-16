@@ -11,11 +11,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.0",
+    "@angular/cli": "^15.2.4",
     "@angular/compiler": "^16.0.0",
-    "@angular/fire": "^0.0.0",
     "@angular/forms": "^16.0.0",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular/router": "^16.0.1",
     "firebase": "^9.22.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
