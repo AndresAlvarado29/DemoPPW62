@@ -12,6 +12,7 @@ import { ContactoService } from 'src/app/services/contacto.services';
 })
 export class ListaContactosComponent {
 listadoContactos: Contacto[]=[]
+
 constructor(private contactoService: ContactoService,
  private router:Router){
   this.listadoContactos = contactoService.getList()
@@ -30,4 +31,8 @@ constructor(private contactoService: ContactoService,
  eliminar(contacto: Contacto){
 this.contactoService.delete(contacto)
  }
+
+ 
+ displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular', 'Direccion'];
+ dataSource = this.listadoContactos;
 }
