@@ -5,7 +5,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
   {path:"paginas/listacontactos", component: ListaContactosComponent},
-  {path:"paginas/nuevo-contacto", component: ContactoComponent}
+  {path:"paginas/nuevo-contacto", component: ContactoComponent},
+  {path:"paginas/crear-contacto", component: ContactoComponent}
 ];
 
 @NgModule({

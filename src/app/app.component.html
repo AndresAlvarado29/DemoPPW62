@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="app.component.scss" />
   </head>
+  <body>
   <div class="encabezado">
   <h1 class="letrasencabezado">Practica de Angular</h1>
   <h2 class="letrasencabezado">Bienvenidos</h2>
 </div>
 <div class="ladoderecho">
-<app-contacto></app-contacto>
 </div>
 <div class="ladoizquierdo">
   <nav>
 <ul>
-<a class="enlaces" routerLink="/paginas/listacontactos">Listado</a>
-<a class="enlaces" href="/">Home</a>
-<a class="enlaces">Pagina 4</a>
-<a class="enlaces">Pagina 5</a>
+<li>  
+<a class="enlaces" routerLink="/">Home</a></li>
+<li><a class="enlaces" routerLink="/paginas/listacontactos">Listado</a></li>
+<li><a class="enlaces" routerLink="/paginas/crear-contacto">Crear Contacto</a></li>
 </ul>
   </nav>
 </div>
@@ -29,4 +29,10 @@
 <p>Contáctanos: info@miempresa.com</p>
 </footer>
 </div>  
+<div>
+  <!--<mat-slide-toggle>Toggle me!</mat-slide-toggle>-->
+</div>
+<div>
+</div>
+  </body>
 </html>

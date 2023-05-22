@@ -12,6 +12,7 @@ import { ContactoService } from 'src/app/services/contacto.services';
 })
 export class ListaContactosComponent {
 listadoContactos: Contacto[]=[]
+
 constructor(private contactoService: ContactoService,
  private router:Router){
   this.listadoContactos = contactoService.getList()
@@ -31,6 +32,7 @@ constructor(private contactoService: ContactoService,
 this.contactoService.delete(contacto)
  }
 
+<<<<<<< HEAD
  borrarContacto(cedula: String){
 this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula != cedula)
  }
@@ -38,4 +40,9 @@ this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula !
   this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula == cedula)
   console.log("perro")
  }
+=======
+ 
+ displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular', 'Direccion'];
+ dataSource = this.listadoContactos;
+>>>>>>> c5bef03173d6d2a545731814e06561dddb73918a
 }
