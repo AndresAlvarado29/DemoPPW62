@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { NavigationExtras } from '@angular/router';
 import { Contacto } from 'src/app/domain/contacto';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ContactoService } from 'src/app/services/contacto.services';
+import { MatTable } from '@angular/material/table';
 
 
 @Component({
@@ -12,6 +13,10 @@ import { ContactoService } from 'src/app/services/contacto.services';
 })
 export class ListaContactosComponent {
 listadoContactos: Contacto[]=[]
+displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular','Direccion','Accion'];
+dataSource = this.contactoService.contactos;
+  @ViewChild(MatTable)
+  table!: MatTable<Contacto>;
 
 constructor(private contactoService: ContactoService,
  private router:Router){
@@ -30,19 +35,19 @@ constructor(private contactoService: ContactoService,
  }
  eliminar(contacto: Contacto){
 this.contactoService.delete(contacto)
+this.table.renderRows();
  }
 
-<<<<<<< HEAD
- borrarContacto(cedula: String){
+
+
+ /*borrarContacto(cedula: String){
 this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula != cedula)
  }
  mensajeContacto(cedula: String){
   this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula == cedula)
   console.log("perro")
- }
-=======
+ }*/
+
  
- displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular', 'Direccion'];
- dataSource = this.listadoContactos;
->>>>>>> c5bef03173d6d2a545731814e06561dddb73918a
+
 }

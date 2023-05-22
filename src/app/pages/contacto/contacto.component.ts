@@ -27,6 +27,7 @@ this.contactoService.getList().forEach(element => {
   if(element.cedula===this.contacto.cedula){
     this.contactoService.update(this.contacto)
     this.contactoService.delete(this.contacto)
+    
   }
 });
  this.contactoService.save(this.contacto)

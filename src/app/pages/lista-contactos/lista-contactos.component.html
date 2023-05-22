@@ -1,57 +1,74 @@
 <header>
     <link rel="stylesheet" href="lista-contactos.component.scss">
 </header>
-<p>Lista de Contactos</p>
+<h1 class="tituloLC">Lista de Contactos</h1>
 
 <span *ngIf="listadoContactos.length == 0">
     No existen contactos
 </span>
+<!--
+<ul *ngFor="let contacto of listadoContactos"> 
+  <button (click)="editar(contacto)">Editar</button>
+  <button [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button> 
+</ul>-->
 
-<ul>
-    <li *ngFor="let contacto of listadoContactos">
-        <p>
-            Cedula: {{contacto.cedula}} | Nombre: {{contacto.nombre}} | Apellido: {{contacto.apellido}}| Correo: {{contacto.correo}}| Celular: {{contacto.celular}}| Direccion: {{contacto.direccion}}
-        </p>
-        <ul>
-        <button (click)="editar(contacto)">Editar</button>
-        <button (click)="eliminar(contacto)">Eliminar</button>
-        </ul>
-    </li>
-</ul>
-<<<<<<< HEAD
-<h1>uso del input y output</h1>
+
+
+<!--<h1>uso del input y output</h1>
 <app-contacto-put [data]="contacto" (borrar)="borrarContacto($event)" *ngFor="let contacto of listadoContactos
 "></app-contacto-put>
 <app-contacto-put [data]="contacto" (mensaje)="mensajeContacto($event)" *ngFor="let contacto of listadoContactos
-"></app-contacto-put>
-=======
+"></app-contacto-put>-->
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <ng-container matColumnDef="Cedula">
+      <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.cedula}} </mat-cell>
     </ng-container>
-  
+
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <ng-container matColumnDef="Nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.nombre}} </mat-cell>
     </ng-container>
-  
+
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    <ng-container matColumnDef="Apellido">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.apellido}} </mat-cell>
     </ng-container>
-  
+
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    <ng-container matColumnDef="Correo">
+      <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.correo}} </mat-cell>
     </ng-container>
-  
+
+    <ng-container matColumnDef="Celular">
+      <mat-header-cell *matHeaderCellDef> Celular </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.celular}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Direccion">
+      <mat-header-cell *matHeaderCellDef> Direccion </mat-header-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.direccion}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Accion">
+      <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
+      <mat-cell *matCellDef="let contacto">
+        <button (click)="editar(contacto)">Editar</button>
+        <button [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button>
+      </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
   </mat-table>
->>>>>>> c5bef03173d6d2a545731814e06561dddb73918a
+
+
+</div>
+

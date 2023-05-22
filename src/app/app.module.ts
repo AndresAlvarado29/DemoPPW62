@@ -9,12 +9,11 @@ import { ListaContactosComponent } from './pages/lista-contactos/lista-contactos
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormField } from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
-import { MatLabel } from '@angular/material/form-field';
-import { MatHint } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import { ContactoPutComponent } from './contacto-put/contacto-put.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
