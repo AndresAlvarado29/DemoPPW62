@@ -12,7 +12,11 @@
         <ul>
         <button (click)="editar(contacto)">Editar</button>
         <button (click)="eliminar(contacto)">Eliminar</button>
-    </ul>
+        </ul>
     </li>
-    
 </ul>
+<h1>uso del input y output</h1>
+<app-contacto-put [data]="contacto" (borrar)="borrarContacto($event)" *ngFor="let contacto of listadoContactos
+"></app-contacto-put>
+<app-contacto-put [data]="contacto" (mensaje)="mensajeContacto($event)" *ngFor="let contacto of listadoContactos
+"></app-contacto-put>

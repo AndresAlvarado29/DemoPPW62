@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationExtras } from '@angular/router';
 import { Contacto } from 'src/app/domain/contacto';
 import { ActivatedRoute,Router } from '@angular/router';
@@ -29,5 +29,13 @@ constructor(private contactoService: ContactoService,
  }
  eliminar(contacto: Contacto){
 this.contactoService.delete(contacto)
+ }
+
+ borrarContacto(cedula: String){
+this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula != cedula)
+ }
+ mensajeContacto(cedula: String){
+  this.listadoContactos=this.listadoContactos.filter(Contacto => Contacto.cedula == cedula)
+  console.log("perro")
  }
 }
