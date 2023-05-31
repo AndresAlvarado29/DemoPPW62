@@ -14,6 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { ContactoPutComponent } from './contacto-put/contacto-put.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatNativeDateModule,
     MatButtonModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

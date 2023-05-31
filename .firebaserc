@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "demoppw62fb": {
+      "hosting": {
+        "demoPPW62": [
+          "demoppw62fb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "demoppw62fb"
+  }
+}
