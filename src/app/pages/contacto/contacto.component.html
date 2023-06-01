@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="contacto.component.scss" />
-  <label for="txtcedula">Cedula</label>  
+<div class="formulario"> 
+<label for="txtcedula">Cedula</label>  
   <input id="txtcedula" [(ngModel)]="contacto.cedula"/>    
     <label for="txtnombre">Nombre</label>
     <input id="txtnombre" [(ngModel)]="contacto.nombre"/>
@@ -14,5 +15,5 @@
     <div class="example-button-row">
     <button id="boton" mat-raised-button (click)="guardar()">Guardar</button>
     </div>
-  
+</div>
 

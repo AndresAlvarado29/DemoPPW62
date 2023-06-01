@@ -15,14 +15,24 @@
 
 .enlaces {
   display: flex;
-  right: -20%;
-  top: -5px;
+  flex-direction: column;
   font-family: 'Times New Roman', Times, serif;
-  padding-left: 20px;
+  font-weight: 700;
+  align-items: center;
   justify-content: center;
-  left: -50%;
+  gap: 20px;
+  font-size: larger;
   padding: 10px;
+  color: rgba(255, 217, 93, 0.986);
 }
+
+.enlaces:hover{
+  opacity: 0.75;
+}
+.enlaces:focus{
+  color: black;
+}
+
 
 .pie {
   position: fixed;
