@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { CarreraComponent } from './pages/carrera/carrera.component';
+import { ListaCarreraComponent } from './pages/lista-carrera/lista-carrera.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     HeaderComponent,
     ListaContactosComponent,
     ContactoComponent,
-    ContactoPutComponent
+    ContactoPutComponent,
+    CarreraComponent,
+    ListaCarreraComponent
   ],
   imports: [
     BrowserModule,

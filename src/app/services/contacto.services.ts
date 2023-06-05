@@ -7,8 +7,8 @@ import { Contacto } from '../domain/contacto';
 export class ContactoService {
 
   contactos: Contacto[] = [];
-
-  constructor() { }
+ /*contactoRef: AngularFirestoreCollection<Contacto>;
+  constructor(private db: AngularFire) { }*/
 
   save(contacto: Contacto){
   this.contactos.push(contacto) 

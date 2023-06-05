@@ -113,7 +113,7 @@
             "ssr": false,
             "browserTarget": "demoPPW62:build:production",
             "firebaseProject": "demoppw62fb",
-            "firebaseHostingSite": "demoppw62fb"
+            "firebaseHostingSite": "demoppw62v2"
           }
         }
       }

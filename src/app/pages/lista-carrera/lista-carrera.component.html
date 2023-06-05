@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lista-carrera.component.scss">
+</head>
+<body>
+    <h1 class="tituloLC">Lista Carrera</h1>
+    <span *ngIf="listadoCarreras.length==0">
+        No existen carreras
+    </span>
+
+    <div>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!-- Position Column -->
+          <ng-container matColumnDef="Codigo">
+            <mat-header-cell *matHeaderCellDef> Codigo </mat-header-cell>
+            <mat-cell *matCellDef="let carrera"> {{carrera.codigo}} </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="Nombre">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let carrera"> {{carrera.nombre}} </mat-cell>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="N° de Ciclos">
+            <mat-header-cell *matHeaderCellDef> Numero de Ciclos </mat-header-cell>
+            <mat-cell *matCellDef="let carrera"> {{carrera.numCiclo}} </mat-cell>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="N° de Materias">
+            <mat-header-cell *matHeaderCellDef> Numero de Materia </mat-header-cell>
+            <mat-cell *matCellDef="let carrera"> {{carrera.numMateria}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="Accion">
+            <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
+            <mat-cell *matCellDef="let carrera">
+              <button (click)="editar(carrera)">Editar</button>
+              <button [disabled]="!dataSource.length" (click)="eliminar(carrera)">Eliminar</button>
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>    
+      </div>
+</body>
+</html>
