@@ -13,6 +13,7 @@ import { MatTable } from '@angular/material/table';
 })
 export class ListaContactosComponent {
 listadoContactos: Contacto[]=[]
+listadoContactosFire:any;
 displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular','Direccion','Accion'];
 dataSource = this.contactoService.contactos;
   @ViewChild(MatTable)
@@ -22,6 +23,7 @@ constructor(private contactoService: ContactoService,
  private router:Router){
   this.listadoContactos = contactoService.getList()
   console.log('listadoContactos', this.listadoContactos)
+  this.listadoContactosFire=contactoService.getAll()
  }
 
  editar(contacto: Contacto){

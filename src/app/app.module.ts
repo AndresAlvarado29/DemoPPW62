@@ -19,7 +19,8 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { CarreraComponent } from './pages/carrera/carrera.component';
 import { ListaCarreraComponent } from './pages/lista-carrera/lista-carrera.component';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,9 @@ import { ListaCarreraComponent } from './pages/lista-carrera/lista-carrera.compo
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [
+    {provide: FIREBASE_OPTIONS, useValue: environment.firebase}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

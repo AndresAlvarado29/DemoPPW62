@@ -17,41 +17,32 @@
 "></app-contacto-put>-->
 
 <div>
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- Position Column -->
-    <ng-container matColumnDef="Cedula">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
+    
+    <ng-container matColumnDef="Cedula" >
       <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.cedula}} </mat-cell>
     </ng-container>
-
-    <!-- Name Column -->
     <ng-container matColumnDef="Nombre">
       <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.nombre}} </mat-cell>
     </ng-container>
-
-    <!-- Weight Column -->
     <ng-container matColumnDef="Apellido">
       <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.apellido}} </mat-cell>
     </ng-container>
-
-    <!-- Symbol Column -->
     <ng-container matColumnDef="Correo">
       <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.correo}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="Celular">
       <mat-header-cell *matHeaderCellDef> Celular </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.celular}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="Direccion">
       <mat-header-cell *matHeaderCellDef> Direccion </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.direccion}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="Accion">
       <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
       <mat-cell *matCellDef="let contacto">
@@ -59,14 +50,18 @@
         <button class="botonT" [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button>
       </mat-cell>
     </ng-container>
-
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
   </mat-table>
   <span *ngIf="listadoContactos.length == 0">
     No existen contactos
 </span>
+<hr/>
+    <li *ngFor="let contacto of listadoContactosFire | async">
+        <a (click)="editar(contacto)">{{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
+        <a href="" (click)="eliminar(contacto)">Eliminar</a>
+    </li>
+<hr>
 
 </div>
 

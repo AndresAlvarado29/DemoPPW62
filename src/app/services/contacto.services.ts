@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Contacto } from '../domain/contacto';
-/*import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';*/
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactoService {
-
+private dbPath ='/contactos';
   contactos: Contacto[] = [];
-  /*contactoRef: AngularFirestoreCollection<Contacto>;
-  constructor(private db: AngularFirestore) {
-    this.contactoRef=this.db.collection('contactos');
+  contactosRef: AngularFirestoreCollection<Contacto>;
+
+  constructor(db: AngularFirestore) {
+    this.contactosRef = db.collection(this.dbPath);
    }
 
-  saveFS(contacto: Contacto){
+  /*saveFS(contacto: Contacto){
     this.contactoRef.add(contacto)
     .then(() => {
       console.log('Datos subidos correctamente');
@@ -24,7 +25,8 @@ export class ContactoService {
   }*/
   save(contacto: Contacto){
   this.contactos.push(contacto) 
-  console.log(this.contactos)   
+  console.log(this.contactos)  
+  this.create(contacto); 
   }
 update(contacto: Contacto){
 let index = this.contactos.indexOf(contacto)
@@ -39,4 +41,18 @@ this.contactos.splice(index,1)
   getList(){
     return this.contactos
   }
+
+ getAll(){
+  return this.contactosRef.valueChanges();
+ }
+
+ create(contacto: Contacto):any{
+  return this.contactosRef.add({...contacto});
+ }
+ updateF(id: string,data:any): Promise<void>{
+  return this.contactosRef.doc(id).update(data);
+ }
+ deleteF(id: string):Promise<void>{
+  return this.contactosRef.doc(id).delete();
+ }
 }
