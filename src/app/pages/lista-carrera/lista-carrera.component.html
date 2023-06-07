@@ -8,10 +8,6 @@
 </head>
 <body>
     <h1 class="tituloLC">Lista Carrera</h1>
-    <span *ngIf="listadoCarreras.length==0">
-        No existen carreras
-    </span>
-
     <div>
         <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <!-- Position Column -->
@@ -41,15 +37,18 @@
           <ng-container matColumnDef="Accion">
             <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
             <mat-cell *matCellDef="let carrera">
-              <button (click)="editar(carrera)">Editar</button>
-              <button [disabled]="!dataSource.length" (click)="eliminar(carrera)">Eliminar</button>
+              <button class="botonT" (click)="editar(carrera)">Editar</button>
+              <button class="botonT" [disabled]="!dataSource.length" (click)="eliminar(carrera)">Eliminar</button>
             </mat-cell>
           </ng-container>
       
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
       
-        </mat-table>    
+        </mat-table>   
+        <span *ngIf="listadoCarreras.length==0">
+          No existen carreras
+      </span> 
       </div>
 </body>
 </html>

@@ -2,10 +2,6 @@
     <link rel="stylesheet" href="lista-contactos.component.scss">
 </head>
 <h1 class="tituloLC">Lista de Contactos</h1>
-
-<span *ngIf="listadoContactos.length == 0">
-    No existen contactos
-</span>
 <!--
 <ul *ngFor="let contacto of listadoContactos"> 
   <button (click)="editar(contacto)">Editar</button>
@@ -59,8 +55,8 @@
     <ng-container matColumnDef="Accion">
       <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
       <mat-cell *matCellDef="let contacto">
-        <button (click)="editar(contacto)">Editar</button>
-        <button [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button>
+        <button class="botonT" (click)="editar(contacto)">Editar</button>
+        <button class="botonT" [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button>
       </mat-cell>
     </ng-container>
 
@@ -68,7 +64,9 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
   </mat-table>
-
+  <span *ngIf="listadoContactos.length == 0">
+    No existen contactos
+</span>
 
 </div>
 

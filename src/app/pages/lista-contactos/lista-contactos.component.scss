@@ -3,7 +3,6 @@
     max-height: 500px;
     overflow: visible; 
   }
-  
   .mat-column-name {
     height: 50px;
     width: 50px;
@@ -11,6 +10,18 @@
   }
   .tituloLC, span{
     display: flex;
-    
   }
-  
+  .botonT{
+    border-radius: 10px;
+    border: none;
+    background-color: #4F7CAC;
+    padding: 5px;
+    display: flex;
+    margin: 5px;
+  }
+  .botonT:hover{
+    opacity: 0.75;
+  }
+  mat-cell{
+    background-color: #818A89;
+  }
