@@ -21,6 +21,8 @@ import { CarreraComponent } from './pages/carrera/carrera.component';
 import { ListaCarreraComponent } from './pages/lista-carrera/lista-carrera.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { ProductoComponent } from './pages/producto/producto.component';
+import { ListaProductoComponent } from './pages/lista-producto/lista-producto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     ContactoComponent,
     ContactoPutComponent,
     CarreraComponent,
-    ListaCarreraComponent
+    ListaCarreraComponent,
+    ProductoComponent,
+    ListaProductoComponent
   ],
   imports: [
     BrowserModule,

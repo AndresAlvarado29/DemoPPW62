@@ -1,0 +1,30 @@
+.mat-mdc-table {
+    overflow: auto;
+    width: 100%; 
+    }
+  
+    .tabla{
+      display: flex;
+      width: auto;
+    }
+    
+    .tituloLC, span{
+      display: flex;
+    }
+    .botonT{
+      border-radius: 10px;
+      border: none;
+      background-color: #4F7CAC;
+      padding: 5px;
+      display: flex;
+      margin: 5px;
+    }
+    .botonT:hover{
+      opacity: 0.75;
+    }
+    mat-cell{
+      background-color: #818A89;
+    }
+    mat-table{
+      background-color: #4F7CAC;
+    }

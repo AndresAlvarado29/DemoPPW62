@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="producto.component.scss">
+</head>
+<body>
+    <div class="formulario">
+        <label for="txtCodigo">Codigo</label>
+        <input id="txtCodigo" [(ngModel)]="producto.uid"/>
+        <label for="txtNombre">Nombre</label>
+        <input id="txtNombre" [(ngModel)]="producto.nombre" />
+        <label for="numCantidad">Cantidad</label>
+        <input id="numCantidad" type="number" [(ngModel)]="producto.cantidad">
+        <label for="numPrecio">Precio</label>
+        <input id="numPrecio" type="number" [(ngModel)]="producto.precio">
+        <div class="example-button-row">
+            <button id="boton" mat-raised-button (click)="guardar()">Guardar</button>
+        </div>
+    </div>
+</body>
+</html>
