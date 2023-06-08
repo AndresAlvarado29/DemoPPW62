@@ -10,7 +10,7 @@ private dbPath ='/contactos';
   contactos: Contacto[] = [];
   contactosRef: AngularFirestoreCollection<Contacto>;
 
-  constructor(db: AngularFirestore) {
+  constructor(private db: AngularFirestore) {
     this.contactosRef = db.collection(this.dbPath);
    }
 
@@ -25,9 +25,11 @@ private dbPath ='/contactos';
   }*/
   save(contacto: Contacto){
   this.contactos.push(contacto) 
-  console.log(this.contactos)  
+  console.log(this.contactos) 
+  contacto.uid = this.db.createId() 
   this.create(contacto); 
   }
+  
 update(contacto: Contacto){
 let index = this.contactos.indexOf(contacto)
 this.contactos.splice(index,1,contacto)
@@ -47,12 +49,22 @@ this.contactos.splice(index,1)
  }
 
  create(contacto: Contacto):any{
-  return this.contactosRef.add({...contacto});
+  return this.contactosRef.doc(contacto.uid).set({...contacto});
  }
  updateF(id: string,data:any): Promise<void>{
+  this.getList().forEach(element => {
+    if(element.uid!=id){
+      console.log("valor no encontrado")
+    }
+  });
   return this.contactosRef.doc(id).update(data);
  }
  deleteF(id: string):Promise<void>{
+  this.getList().forEach(element => {
+    if(element.uid!=id){
+      console.log("valor no encontrado")
+    }
+  });
   return this.contactosRef.doc(id).delete();
  }
 }

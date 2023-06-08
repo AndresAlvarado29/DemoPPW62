@@ -15,7 +15,7 @@ export class ListaContactosComponent {
 listadoContactos: Contacto[]=[]
 listadoContactosFire:any;
 displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular','Direccion','Accion'];
-dataSource = this.contactoService.contactos;
+dataSource = this.contactoService.getAll();
   @ViewChild(MatTable)
   table!: MatTable<Contacto>;
 
@@ -39,6 +39,10 @@ constructor(private contactoService: ContactoService,
 this.contactoService.delete(contacto)
 this.table.renderRows();
  }
+ eliminarF(contacto: Contacto){
+  this.contactoService.deleteF(contacto.uid)
+   }
+ 
 
 
 

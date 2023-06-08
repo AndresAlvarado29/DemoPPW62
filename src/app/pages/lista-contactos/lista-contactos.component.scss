@@ -1,13 +1,13 @@
 .mat-mdc-table {
-    width: 62%;
-    max-height: 500px;
-    overflow: visible; 
+  overflow: auto;
+  width: 100%; 
   }
-  .mat-column-name {
-    height: 50px;
-    width: 50px;
-    line-height:22px;
+
+  .tabla{
+    display: flex;
+    width: auto;
   }
+  
   .tituloLC, span{
     display: flex;
   }
@@ -24,4 +24,7 @@
   }
   mat-cell{
     background-color: #818A89;
+  }
+  mat-table{
+    background-color: #4F7CAC;
   }

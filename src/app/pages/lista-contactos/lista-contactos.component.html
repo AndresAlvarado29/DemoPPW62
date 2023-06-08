@@ -16,10 +16,10 @@
 <app-contacto-put [data]="contacto" (mensaje)="mensajeContacto($event)" *ngFor="let contacto of listadoContactos
 "></app-contacto-put>-->
 
-<div>
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
-    
-    <ng-container matColumnDef="Cedula" >
+<div class="tabla">
+  
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+    <ng-container matColumnDef="Cedula"  >
       <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.cedula}} </mat-cell>
     </ng-container>
@@ -47,21 +47,21 @@
       <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
       <mat-cell *matCellDef="let contacto">
         <button class="botonT" (click)="editar(contacto)">Editar</button>
-        <button class="botonT" [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button>
+        <button class="botonT"  (click)="eliminarF(contacto)">Eliminar</button>
       </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-  <span *ngIf="listadoContactos.length == 0">
+  <span *ngIf="listadoContactosFire.length == 0">
     No existen contactos
 </span>
-<hr/>
+<!--<hr/>
+  [disabled]="!dataSource.length" pertenecia al boton borrar
     <li *ngFor="let contacto of listadoContactosFire | async">
         <a (click)="editar(contacto)">{{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
         <a href="" (click)="eliminar(contacto)">Eliminar</a>
     </li>
-<hr>
-
+<hr>-->
 </div>
 
