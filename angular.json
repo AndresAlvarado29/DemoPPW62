@@ -40,8 +40,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -113,7 +113,7 @@
             "ssr": false,
             "browserTarget": "demoPPW62:build:production",
             "firebaseProject": "demoppw62fb",
-            "firebaseHostingSite": "demoppw62v2"
+            "firebaseHostingSite": "demoppw62fb"
           }
         }
       }

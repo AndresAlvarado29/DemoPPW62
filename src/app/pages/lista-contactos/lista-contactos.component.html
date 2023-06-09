@@ -2,22 +2,7 @@
     <link rel="stylesheet" href="lista-contactos.component.scss">
 </head>
 <h1 class="tituloLC">Lista de Contactos</h1>
-<!--
-<ul *ngFor="let contacto of listadoContactos"> 
-  <button (click)="editar(contacto)">Editar</button>
-  <button [disabled]="!dataSource.length" (click)="eliminar(contacto)">Eliminar</button> 
-</ul>-->
-
-
-
-<!--<h1>uso del input y output</h1>
-<app-contacto-put [data]="contacto" (borrar)="borrarContacto($event)" *ngFor="let contacto of listadoContactos
-"></app-contacto-put>
-<app-contacto-put [data]="contacto" (mensaje)="mensajeContacto($event)" *ngFor="let contacto of listadoContactos
-"></app-contacto-put>-->
-
 <div class="tabla">
-  
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
     <ng-container matColumnDef="Cedula"  >
       <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
@@ -56,12 +41,5 @@
   <span *ngIf="listadoContactosFire.length == 0">
     No existen contactos
 </span>
-<!--<hr/>
-  [disabled]="!dataSource.length" pertenecia al boton borrar
-    <li *ngFor="let contacto of listadoContactosFire | async">
-        <a (click)="editar(contacto)">{{contacto.cedula}} | {{contacto.nombre}} | {{contacto.direccion}}</a>
-        <a href="" (click)="eliminar(contacto)">Eliminar</a>
-    </li>
-<hr>-->
 </div>
 
