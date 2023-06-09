@@ -11,9 +11,9 @@
     <div class="tabla">
         <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <!-- Position Column -->
-          <ng-container matColumnDef="ID">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let producto"> {{producto.uid}} </mat-cell>
+          <ng-container matColumnDef="Codigo">
+            <mat-header-cell *matHeaderCellDef> Codigo </mat-header-cell>
+            <mat-cell *matCellDef="let producto"> {{producto.codigo}} </mat-cell>
           </ng-container>
       
           <!-- Name Column -->

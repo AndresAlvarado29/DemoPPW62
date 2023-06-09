@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="contacto.component.scss" />
 <div class="formulario"> 
 <label for="txtcedula">Cedula</label>  
-  <input id="txtcedula" [(ngModel)]="contacto.cedula"/>    
+  <input id="txtcedula" [(ngModel)]="contacto.cedula" placeholder="0111111111"/>    
     <label for="txtnombre">Nombre</label>
     <input id="txtnombre" [(ngModel)]="contacto.nombre"/>
     <label for="txtapellido">Apellido</label>
     <input id="txtapellido" [(ngModel)]="contacto.apellido" />
     <label for="txtcorrero">Correo</label>
-    <input id="txtcorreo" [(ngModel)]="contacto.correo"/>
+    <input id="txtcorreo" type="email" [(ngModel)]="contacto.correo" placeholder="example@gmail.com"/>
     <label for="txtcelular">Celular</label>
-    <input id="txtcelular" [(ngModel)]="contacto.celular"/>
+    <input id="txtcelular" [(ngModel)]="contacto.celular" placeholder="0999999999"/>
     <label for="txtdireccion">Direccion</label>
     <input id="txtdireccion" [(ngModel)]="contacto.direccion"/>
     <div class="example-button-row">

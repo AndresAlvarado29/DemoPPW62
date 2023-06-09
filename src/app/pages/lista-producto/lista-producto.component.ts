@@ -12,7 +12,7 @@ import { MatTable } from '@angular/material/table';
 export class ListaProductoComponent {
 listadoProductos:Producto[]=[]
 listadoProductosFire:any;
-displayedColumns: string[]=['ID','Nombre','Cantidad','Precio','Accion']
+displayedColumns: string[]=['Codigo','Nombre','Cantidad','Precio','Accion']
 dataSource=this.productoService.getAll();
 @ViewChild(MatTable)
 table!: MatTable<Producto>;

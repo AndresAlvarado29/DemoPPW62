@@ -9,27 +9,29 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./producto.component.scss']
 })
 export class ProductoComponent {
- producto: Producto = new Producto();
+  producto: Producto = new Producto();
 
- constructor(private productoService: ProductoService, private router:Router){
-  let params= this.router.getCurrentNavigation()?.extras.queryParams;
-  if(params){
-    console.log(params)
-    this.producto=new Producto()
-    this.producto=params['producto']
-  }  
- }
- guardar(){
-      if(this.producto.uid.valueOf!=null){
-        console.log("valor del uid"+this.producto.uid)
-     this.productoService.update(this.producto.uid,this.producto)
-     this.productoService.delete(this.producto.uid)
+  constructor(private productoService: ProductoService, private router: Router) {
+    let params = this.router.getCurrentNavigation()?.extras.queryParams;
+    if (params) {
+      console.log(params)
+      this.producto = new Producto()
+      this.producto = params['producto']
+    }
+  }
+  guardar() {
+    if (this.producto.uid != "") {
+      this.productoService.update(this.producto.uid, this.producto)
+      this.productoService.delete(this.producto.uid)
       console.log("actualizado");
-      }
-   
-  this.productoService.save(this.producto)
-      this.producto= new Producto()
+    }
+    this.productoService.save(this.producto)
+    this.producto = new Producto()
+    console.log("creado");
     this.router.navigate(['paginas/listaproductos'])
   }
-  
+
+
+
+
 }
