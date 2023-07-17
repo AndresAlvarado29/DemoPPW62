@@ -23,6 +23,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { ListaProductoComponent } from './pages/lista-producto/lista-producto.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { ListaProductoComponent } from './pages/lista-producto/lista-producto.co
     MatButtonModule,
     MatTableModule,
     MatFormFieldModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],

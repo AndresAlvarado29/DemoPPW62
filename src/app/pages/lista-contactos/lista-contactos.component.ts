@@ -1,9 +1,10 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras } from '@angular/router';
 import { Contacto } from 'src/app/domain/contacto';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ContactoService } from 'src/app/services/contacto.services';
 import { MatTable } from '@angular/material/table';
+import { PersonasService } from 'src/app/services/personas.service';
 
 
 @Component({
@@ -11,19 +12,25 @@ import { MatTable } from '@angular/material/table';
   templateUrl: './lista-contactos.component.html',
   styleUrls: ['./lista-contactos.component.scss']
 })
-export class ListaContactosComponent {
+export class ListaContactosComponent implements OnInit {
 listadoContactos: Contacto[]=[]
 listadoContactosFire:any;
+listadoContactosWS: any;
 displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular','Direccion','Accion'];
 dataSource = this.contactoService.getAll();
   @ViewChild(MatTable)
   table!: MatTable<Contacto>;
 
 constructor(private contactoService: ContactoService,
+  private personasService: PersonasService,
  private router:Router){
   this.listadoContactos = contactoService.getList()
   console.log('listadoContactos', this.listadoContactos)
   this.listadoContactosFire=contactoService.getAll()
+  this.listadoContactosWS=contactoService.getAll()
+ }
+ ngOnInit(): void {
+     this.listadoContactosWS= this.personasService.getAll()
  }
 
  editar(contacto: Contacto){
@@ -40,7 +47,7 @@ this.contactoService.delete(contacto)
 this.table.renderRows();
  }
  eliminarF(contacto: Contacto){
-  this.contactoService.deleteF(contacto.uid)
+//  this.contactoService.deleteF(contacto.uid)
    }
  
 

@@ -1,5 +1,5 @@
 export class Contacto {
-    uid: string='';
+    //uid: string='';
     nombre: string = '';
     apellido: string = '';
     correo: string = '';

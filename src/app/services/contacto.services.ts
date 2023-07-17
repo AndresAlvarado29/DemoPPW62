@@ -26,7 +26,7 @@ private dbPath ='/contactos';
   save(contacto: Contacto){
   this.contactos.push(contacto) 
   console.log(this.contactos) 
-  contacto.uid = this.db.createId() 
+ // contacto.uid = this.db.createId() 
   this.create(contacto); 
   }
   
@@ -49,21 +49,21 @@ this.contactos.splice(index,1)
  }
 
  create(contacto: Contacto):any{
-  return this.contactosRef.doc(contacto.uid).set({...contacto});
+//  return this.contactosRef.doc(contacto.uid).set({...contacto});
  }
  updateF(id: string,data:any): Promise<void>{
   this.getList().forEach(element => {
-    if(element.uid!=id){
+  /*  if(element.uid!=id){
       console.log("valor no encontrado")
-    }
+    }*/
   });
   return this.contactosRef.doc(id).update(data);
  }
  deleteF(id: string):Promise<void>{
   this.getList().forEach(element => {
-    if(element.uid!=id){
+  /*   if(element.uid!=id){
       console.log("valor no encontrado")
-    }
+    }*/
   });
   return this.contactosRef.doc(id).delete();
  }
