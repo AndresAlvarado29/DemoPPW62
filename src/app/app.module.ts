@@ -24,6 +24,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { ListaProductoComponent } from './pages/lista-producto/lista-producto.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Contacto2Component } from './contacto2/contacto2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     CarreraComponent,
     ListaCarreraComponent,
     ProductoComponent,
-    ListaProductoComponent
+    ListaProductoComponent,
+    Contacto2Component
   ],
   imports: [
     BrowserModule,

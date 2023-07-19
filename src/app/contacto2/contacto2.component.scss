@@ -1,0 +1,43 @@
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+label{  
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 700;
+}
+input{ 
+    display: flex; 
+    justify-content: center;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(169, 250, 239, 0.39);
+    width: 200px;
+    border-color: rgba(169, 250, 239, 0.39); ;
+}
+
+input:hover{
+    opacity: 0.75;
+}
+
+#boton{
+    display: flex;
+    margin: 20px;
+}
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+
+  
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+

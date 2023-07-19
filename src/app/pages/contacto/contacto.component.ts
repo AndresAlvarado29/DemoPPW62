@@ -33,14 +33,14 @@ guardarWS(){
   this.contacto = new Contacto();
   this.router.navigate(['paginas/listacontactos'])
 }
-
+/*
   guardar() {
-   /* if (this.contacto.uid != "") {
+    if (this.contacto.uid != "") {
       // this.contactoService.update(this.contacto)
       this.contactoService.updateF(this.contacto.uid, this.contacto)
       this.contactoService.deleteF(this.contacto.uid)
       console.log("actualizado");
-    }*/
+    }
 
     this.contactoService.save(this.contacto)
     this.contacto = new Contacto()
@@ -53,4 +53,5 @@ guardarWS(){
     });
     this.router.navigate(['paginas/listacontactos'])
   }
+  */
 }

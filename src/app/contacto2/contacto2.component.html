@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="contacto2.component.scss" />
+<div class="formulario"> 
+<label for="txtcedula">Cedula</label>  
+  <input id="txtcedula" [(ngModel)]="contacto.cedula" placeholder="0111111111"/>    
+    <label for="txtnombre">Nombre</label>
+    <input id="txtnombre" [(ngModel)]="contacto.nombre"/>
+    <label for="txtapellido">Apellido</label>
+    <input id="txtapellido" [(ngModel)]="contacto.apellido" />
+    <!--<label for="txtcorrero">Correo</label>
+    <input id="txtcorreo" type="email" [(ngModel)]="contacto.correo" placeholder="example@gmail.com" required/>-->
+    <label for="txtcelular">Celular</label>
+    <input id="txtcelular" [(ngModel)]="contacto.telefono" placeholder="0999999999"/>
+    <label for="txtdireccion">Direccion</label>
+    <input id="txtdireccion" [(ngModel)]="contacto.direccion"/>
+    <div class="example-button-row">
+    <button id="boton" mat-raised-button (click)="guardarWS()">Guardar</button>
+    </div>
+</div>
+
