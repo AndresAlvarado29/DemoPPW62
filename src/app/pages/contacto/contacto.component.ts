@@ -28,10 +28,12 @@ guardarWS(){
   this.contactoService.save(this.contacto)
   this.personasService.save(this.contacto).subscribe(data=>{
     console.log("resultado WS save", data);
+
   });
   this.contacto = new Contacto();
   this.router.navigate(['paginas/listacontactos'])
 }
+
   guardar() {
    /* if (this.contacto.uid != "") {
       // this.contactoService.update(this.contacto)

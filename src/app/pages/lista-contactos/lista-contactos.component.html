@@ -16,13 +16,13 @@
       <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.apellido}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="Correo">
+    <!--<ng-container matColumnDef="Correo">
       <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
       <mat-cell *matCellDef="let contacto"> {{contacto.correo}} </mat-cell>
-    </ng-container>
+    </ng-container>--> <!--quitamos correo-->
     <ng-container matColumnDef="Celular">
       <mat-header-cell *matHeaderCellDef> Celular </mat-header-cell>
-      <mat-cell *matCellDef="let contacto"> {{contacto.celular}} </mat-cell>
+      <mat-cell *matCellDef="let contacto"> {{contacto.telefono}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="Direccion">
       <mat-header-cell *matHeaderCellDef> Direccion </mat-header-cell>
@@ -32,7 +32,7 @@
       <mat-header-cell *matHeaderCellDef> Accion </mat-header-cell>
       <mat-cell *matCellDef="let contacto">
         <button class="botonT" (click)="editar(contacto)">Editar</button>
-        <button class="botonT"  (click)="eliminarF(contacto)">Eliminar</button>
+        <button class="botonT"  (click)="eliminarWS(contacto)">Eliminar</button>
       </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

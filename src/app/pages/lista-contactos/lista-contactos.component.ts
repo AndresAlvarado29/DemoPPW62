@@ -16,8 +16,8 @@ export class ListaContactosComponent implements OnInit {
 listadoContactos: Contacto[]=[]
 listadoContactosFire:any;
 listadoContactosWS: any;
-displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Correo', 'Celular','Direccion','Accion'];
-dataSource = this.contactoService.getAll();
+displayedColumns: string[] = ['Cedula', 'Nombre', 'Apellido', 'Celular','Direccion','Accion'];//quitamos correo
+dataSource = this.personasService.getAll();
   @ViewChild(MatTable)
   table!: MatTable<Contacto>;
 
@@ -27,7 +27,7 @@ constructor(private contactoService: ContactoService,
   this.listadoContactos = contactoService.getList()
   console.log('listadoContactos', this.listadoContactos)
   this.listadoContactosFire=contactoService.getAll()
-  this.listadoContactosWS=contactoService.getAll()
+  this.listadoContactosWS=personasService.getAll()
  }
  ngOnInit(): void {
      this.listadoContactosWS= this.personasService.getAll()
@@ -45,6 +45,10 @@ constructor(private contactoService: ContactoService,
  eliminar(contacto: Contacto){
 this.contactoService.delete(contacto)
 this.table.renderRows();
+ }
+ eliminarWS(contacto: Contacto){
+  console.log(contacto)
+this.personasService.delete(contacto.cedula)
  }
  eliminarF(contacto: Contacto){
 //  this.contactoService.deleteF(contacto.uid)
